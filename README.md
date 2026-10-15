@@ -67,3 +67,4 @@ MIT — см. файл [LICENSE](LICENSE).
 1. Склонировать репозиторий: git clone https://github.com/snureeva389-wq/project.git
 2. Установить зависимости: pip install aiogram
 3. Создать файл .env с токеном бота и запустить: python src/main.py
+e6c2e1270f23c54b4304b78e38d4d27d049fceaf
