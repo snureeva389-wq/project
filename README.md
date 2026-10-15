@@ -62,3 +62,8 @@ MIT — см. файл [LICENSE](LICENSE).
 - "src/"-исходный код бота (Python+aiogram)
 - 'data/' - базы книг и цитат, партнерские ссылки
 - "content/" - тексты, цитаты, справки бота
+
+## Как запустить
+1. Склонировать репозиторий: git clone https://github.com/snureeva389-wq/project.git
+2. Установить зависимости: pip install aiogram
+3. Создать файл .env с токеном бота и запустить: python src/main.py
