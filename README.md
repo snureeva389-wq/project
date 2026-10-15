@@ -64,7 +64,6 @@ MIT — см. файл [LICENSE](LICENSE).
 - "src/"-исходный код бота (Python+aiogram)
 - 'data/' - базы книг и цитат, партнерские ссылки
 - "content/" - тексты, цитаты, справки бота
-<<<<<<< HEAD
 
 ## Как запустить
 1. Склонировать репозиторий: git clone https://github.com/snureeva389-wq/project.git
