@@ -1,0 +1,47 @@
+@startuml
+title HLD — Бот-каталог книг
+left to right direction
+
+actor "Пользователь" as User
+actor "Администратор" as Admin
+
+cloud "Telegram" as TG
+
+rectangle "Бот-каталог книг (сервер, Python)" {
+  component "Telegram Bot\n(aiogram)" as Bot
+  component "Обработчики\nкоманд" as Handlers
+  component "Поиск по цитате\n(FTS5)" as Search
+  component "Цитата дня" as Quote
+  component "Трекер чтения" as Tracker
+  component "Планировщик\nнапоминаний" as Scheduler
+  component "Партнёрские\nссылки" as Links
+  component "Админ-модуль" as AdminM
+}
+
+database "SQLite\n(книги, цитаты,\nпользователи, списки)" as DB
+cloud "Книжные магазины\n(партнёрские сайты)" as Shops
+folder "Резервные копии\n(раз в сутки)" as Backup
+
+User --> TG
+Admin --> TG
+TG <--> Bot : Bot API (HTTPS)
+
+Bot --> Handlers
+Handlers --> Search
+Handlers --> Quote
+Handlers --> Tracker
+Handlers --> Scheduler
+Handlers --> Links
+Handlers --> AdminM
+
+Search --> DB
+Quote --> DB
+Tracker --> DB
+Scheduler --> DB
+Links --> DB
+AdminM --> DB
+
+Scheduler --> Bot : отправка напоминаний\nи цитаты дня
+Links --> Shops : переход по ссылке
+DB --> Backup
+@enduml
